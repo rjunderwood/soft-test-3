@@ -31,10 +31,7 @@
 #
 
 import os
-
-
 MUTANTS_RESULTS_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "results/mutants") # exact path to the results directory
-
 
 def main():
 
@@ -44,10 +41,9 @@ def main():
 
         #Each file is a mutant either source_ or follow_up_
         # if the source and follow_up file content is not the same, the mutant is killed
-    
         mutants_killed = []
         mutants_processed = []
-                
+        
 
         #For each file in the folder
         for file in os.listdir(os.path.join(MUTANTS_RESULTS_PATH, folder)):
@@ -60,7 +56,6 @@ def main():
                 #If not, create a new object with mutant_id and add it to the list
                 mutants_processed.append({'mutant_id': mutant_id, 'source': '', 'follow_up': ''})
             
-
             if file.endswith(".txt"):
                 with open(os.path.join(MUTANTS_RESULTS_PATH, folder, file), "r") as f:
                     #Read the file
@@ -106,12 +101,16 @@ def main():
             #Kill mutant if not passed
             if len(passed_mutant) != 3:
                 mutants_killed.append(mutant['mutant_id'])
-                print("Mutant " + mutant['mutant_id'] + " killed")
+                # print("Mutant " + mutant['mutant_id'] + " killed")
 
             
 
         
-        print("Test Case " + str(test_number) + " killed " + str(len(mutants_killed)) + " mutants\n\n")
+        print("Test Case " + str(test_number) + " killed " + str(len(mutants_killed)) + " mutants")
+        for mutant in mutants_killed:
+            print(mutant)
+        print("\n\n")
+        print( )
         test_number += 1
 
 

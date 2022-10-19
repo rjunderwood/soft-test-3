@@ -1,3 +1,6 @@
+
+
+
 # =======================================================================
 #
 # Copyright 2022, Riley Underwood
@@ -29,3 +32,27 @@
 #
 # =======================================================================
 #
+import random
+
+
+def main(): 
+
+
+
+    #for range 1-5
+    for i in range(1, 6):
+        #Create a list of up to 20 integers randomly generated 
+        #between 1 and 100
+        #Add some duplicate numbers to the list
+
+        random_list = random.sample(range(-100,100), random.randint(1, 20))
+        
+        #Randomly select a number from the list and duplicate it
+        random_list.append(random.choice(random_list))
+
+        print(random_list)
+        
+
+
+if __name__ == "__main__":
+    main()

@@ -40,6 +40,7 @@ PYTHON_COMMAND = "python3"
 PROGRAM_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "program/newtons_law_of_gravitation.py")# exact path to the newtons_law_of_gravitation.py in program directory 
 MUTANTS_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "mutants") # exact path to the mutants directory
 TESTS_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "tests")# exact path to the tests directory
+#TESTS_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "tests_")# exact path to the tests directory
 RESULTS_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "results") # exact path to the results directory
 
 
@@ -81,6 +82,7 @@ def main():
         with open(TESTS_PATH + "/" + file, "r") as f:
             #Read first line and split at , into inputs force, mass1, mass2, distance
             source_input = f.readline().split(",")
+            #Second line is the follow up 
             follow_up_input = f.readline().split(",")
             run_program_test(test_number, source_input, follow_up_input)
             run_mutant_tests(test_number, source_input, follow_up_input)
