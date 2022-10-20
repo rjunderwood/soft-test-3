@@ -89,14 +89,17 @@ def main():
             passed_case.append(0)
 
         #Kill test_case if not passed
-        if len(passed_case) != 3:
+        # if len(passed_case) != 3:
           
-            print("Test Case " + str(test_case['program_test_case_id']) + " failed.")
-        else:
-            print("Test Case " + str(test_case['program_test_case_id']) + " passed.")
+        #     print("Test Case " + str(test_case['program_test_case_id']) + " failed.")
+        # else:
+        #     print("Test Case " + str(test_case['program_test_case_id']) + " passed.")
    
-    
-
+        
+        print("TEST CASE " + str(test_case['program_test_case_id']) + " RESULTS:")
+        print("SO: " + str(test_case['source']))
+        print("FO: " + str(test_case['follow_up']))
+        print("")
 
 
     
